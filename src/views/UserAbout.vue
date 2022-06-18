@@ -21,7 +21,7 @@
       </div>
       <h2 class="display-3">關於我們</h2>
     </div>
-    <div class="row g-5 mt-1">
+    <div class="row gx-0 gy-3 g-lg-5 mt-1">
       <div class="col-lg-6">
         <p class="h3 lh-lg">
           &ensp;&ensp;&ensp;&ensp;sixfeet&ensp;六腳家具是成立於 2022
