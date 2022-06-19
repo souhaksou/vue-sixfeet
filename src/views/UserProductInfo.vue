@@ -3,7 +3,7 @@
   <!-- header -->
   <section class="row g-0">
     <div class="col-md-6">
-      <img class="img-fluid h-100" src="../assets/images/product.jpg" alt="flower" />
+      <img class="img-fluid w-100 h-100" src="../assets/images/product.jpg" alt="flower" />
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center bg-secondary">
       <p class="d-none d-md-block py-5 text-light lh-lg fs-1">

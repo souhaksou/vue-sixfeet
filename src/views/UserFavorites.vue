@@ -3,7 +3,7 @@
   <!-- header -->
   <section class="row g-0">
     <div class="col-md-6">
-      <img class="img-fluid h-100" src="../assets/images/love.jpg" alt="moon" />
+      <img class="img-fluid w-100 h-100" src="../assets/images/love.jpg" alt="moon" />
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
       <p class="d-none d-md-block py-5 lh-lg fs-1">

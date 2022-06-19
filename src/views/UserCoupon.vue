@@ -3,7 +3,7 @@
   <section>
     <div class="row gx-0">
       <div class="d-none d-xl-block col-xl-3">
-        <img class="img-fluid h-100" src="../assets/images/couponBox.jpg" alt="box" />
+        <img class="img-fluid w-100 h-100" src="../assets/images/couponBox.jpg" alt="box" />
       </div>
       <div class="col-xl-9 bg-light p-5">
         <h2 class="text-center fs-1 mb-3">

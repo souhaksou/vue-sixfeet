@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="col-md-6">
-      <img class="img-fluid h-100" src="../assets/images/cart.jpg" alt="moon" />
+      <img class="img-fluid w-100 h-100" src="../assets/images/cart.jpg" alt="moon" />
     </div>
   </section>
   <!-- cart -->
