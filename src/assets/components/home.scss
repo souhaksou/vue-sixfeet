@@ -1,0 +1,33 @@
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    background-image: url(~@/assets/images/logo.svg);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .home-background {
+    background-image: url(~@/assets/images/homebg.jpg);
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home-header-text {
+    background-color: rgb(255, 213, 175, 0.3);
+  }
+
+  .home-icon:hover {
+    color: #712E11 !important;
+  }
+
+  .animate__animated.animate__backInLeft {
+    --animate-duration: 3.5s;
+  }

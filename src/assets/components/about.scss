@@ -1,0 +1,10 @@
+  .customer {
+    height: 600px;
+  }
+
+  @media (min-width: 992px) {
+    .customer {
+      height: 500px;
+    }
+
+  }
