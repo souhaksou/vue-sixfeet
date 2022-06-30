@@ -1,0 +1,21 @@
+  .other-img {
+    height: 200px;
+  }
+
+  @media (min-width: 376px) {
+    .other-img {
+      height: 300px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .other-img {
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .other-img {
+      height: 250px;
+    }
+  }

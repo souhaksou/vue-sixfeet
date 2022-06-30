@@ -7,7 +7,7 @@
         <img class="img-fluid" :src="product.imageUrl" :alt="product.title" />
         <div class="row g-0" v-if="product.images">
           <div class="col-lg-4" v-for="item in product.images" :key="item">
-            <img class="img-fluid" :src="item" :alt="其他圖片" />
+            <img class="img-fluid w-100" :src="item" alt="其他圖片" />
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
       <div class="row gy-3">
         <div class="col-lg-4" v-for="item in interests" :key="item.id">
           <div class="card border-secondary h-100">
-            <img class="card-img-top img-fluid" :src="item.imageUrl" :alt="item.title" />
+            <img class="card-img-top img-fluid other-img" :src="item.imageUrl" :alt="item.title" />
             <div class="card-body d-flex justify-content-end flex-column">
               <a href="#" class="btn btn-secondary d-block" @click.prevent="toProduct(item.id)">
                 <i class="bi bi-info-square-fill"></i>&ensp;&ensp;查看更多資訊
