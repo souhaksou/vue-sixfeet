@@ -9,7 +9,7 @@
         <h2 class="text-center fs-1 mb-3">
           <i class="bi bi-star"></i>&ensp;人人有獎！！&ensp;<i class="bi bi-star"></i>
         </h2>
-        <div class="row gx-5 gy-3 mt-lg-5">
+        <div class="row g-5 mt-lg-5">
           <div class="col-lg-6">
             <p class="fs-2 mb-3 mb-lg-5">
               {{ `今天日期是 ${time.year} 年 ${time.month} 月 ${time.date} 日` }}
@@ -32,12 +32,16 @@
           </div>
           <div class="col-lg-6 d-flex justify-content-center align-items-center">
             <!-- <p class="display-6">今天的優惠券是什麼呢？</p> -->
-            <div class="card h-100">
+            <div class="card w-100 h-100">
               <div class="card-body">
                 <h3 class="card-title mb-3">優惠券</h3>
-                <p class="card-text h4">
-                  <span class="text-danger" v-if="!isClicked">優惠碼是多少呢?</span>
-                  <span class="text-success" v-else>{{ couponCode }}</span>
+                <p class="card-text h4 lh-base">
+                  <span class="text-danger" v-if="!isClicked"
+                    >優惠碼是多少呢?<br />抽出您的優惠券吧</span
+                  >
+                  <span class="text-success" v-else
+                    >{{ couponCode }}percent<br />恭喜您結帳時打{{ couponCode }}折
+                  </span>
                 </p>
               </div>
               <img src="../assets/images/question.jpg" class="img-fluid card-img-bottom" alt="?" />
@@ -57,13 +61,12 @@ export default {
       time: {},
       coupon: ['88', ' 87', ' 85', '80', '77'],
       couponCode: '',
-      num: 10,
     };
   },
   methods: {
     randomNum() {
-      this.num = Math.floor(Math.random() * 5);
-      this.couponCode = `${this.coupon[this.num]}percent`;
+      const num = Math.floor(Math.random() * 5);
+      this.couponCode = this.coupon[num];
       this.isClicked = true;
     },
     getTime() {

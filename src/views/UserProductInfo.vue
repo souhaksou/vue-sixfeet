@@ -1,17 +1,5 @@
 <template>
   <loading-overlay :active="isLoading"></loading-overlay>
-  <!-- header -->
-  <section class="row g-0">
-    <div class="col-md-6">
-      <img class="img-fluid w-100 h-100" src="../assets/images/product.jpg" alt="flower" />
-    </div>
-    <div class="col-md-6 d-flex justify-content-center align-items-center bg-secondary">
-      <p class="d-none d-md-block py-5 text-light lh-lg fs-1">
-        鳥兒願為一朵雲<br />
-        雲兒願為一隻鳥
-      </p>
-    </div>
-  </section>
   <!-- 商品 -->
   <section class="container my-5">
     <div class="row g-5">
@@ -75,6 +63,24 @@
       </div>
     </div>
   </section>
+  <!-- 可能會感興趣的商品 -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h3 class="mb-5">您可能會感興趣的商品</h3>
+      <div class="row gy-3">
+        <div class="col-lg-4" v-for="item in interests" :key="item.id">
+          <div class="card border-secondary h-100">
+            <img class="card-img-top img-fluid" :src="item.imageUrl" :alt="item.title" />
+            <div class="card-body d-flex justify-content-end flex-column">
+              <a href="#" class="btn btn-secondary d-block" @click.prevent="toProduct(item.id)">
+                <i class="bi bi-info-square-fill"></i>&ensp;&ensp;查看更多資訊
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -82,13 +88,16 @@ export default {
   data() {
     return {
       product: {},
+      products: [],
       id: '',
       isLoading: false,
       favorites: [],
       favoriteId: [],
+      interests: [],
     };
   },
   methods: {
+    // 取得單一產品
     getProduct() {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`;
       this.isLoading = true;
@@ -100,6 +109,7 @@ export default {
         }
       });
     },
+    // 加入購物車
     addCart(id) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`;
       this.isLoading = true;
@@ -143,11 +153,50 @@ export default {
     isFavorite(id) {
       return this.favoriteId.includes(id);
     },
+    // 取得所有產品
+    getProducts() {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
+      this.isLoading = true;
+      return this.$http.get(url).then((res) => {
+        this.products = res.data.products;
+        console.log('products:', res);
+        this.isLoading = false;
+      });
+    },
+    // 過濾並隨機選擇
+    getInterests() {
+      const index = this.products.findIndex((element) => element.id === this.id);
+      this.products.splice(index, 1);
+      const arr = [];
+      while (arr.length < 3) {
+        const num = parseInt(Math.random() * (this.products.length - 1), 10);
+        if (arr.indexOf(num) === -1) {
+          arr.push(num);
+        }
+      }
+      arr.forEach((element) => {
+        this.interests.push(this.products[element]);
+      });
+      console.log(arr, this.interests);
+    },
+    // 跳轉商品頁面
+    toProduct(id) {
+      this.$router.push(`/product/${id}`);
+      this.id = id;
+      this.getProducts();
+      this.getFavorites();
+      this.getProduct();
+      this.interests = [];
+      this.getInterests();
+    },
   },
   created() {
     this.id = this.$route.params.productId;
-    this.getProduct();
-    this.getFavorites();
+    this.getProducts().then(() => {
+      this.getFavorites();
+      this.getProduct();
+      this.getInterests();
+    });
   },
 };
 </script>

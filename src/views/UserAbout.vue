@@ -1,18 +1,4 @@
 <template>
-  <!-- 用過的都說讚 -->
-  <section class="row gx-0">
-    <div class="col-lg-6">
-      <img class="img-fluid w-100" src="../assets/images/thumb.png" alt="用過的都說讚" />
-    </div>
-    <div class="col-lg-6 position-relative d-flex justify-content-center">
-      <img class="img-fluid w-100" src="../assets/images/thumbtext.png" alt="用過的都說讚" />
-      <div class="position-absolute mt-5">
-        <p class="text-center display-5 text-light lh-lg pt-3 pt-lg-0">
-          用過的都說讚！<br />（六腳家具）
-        </p>
-      </div>
-    </div>
-  </section>
   <!-- 介紹 -->
   <section class="container mt-5">
     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
@@ -78,7 +64,7 @@
                 &ensp;&ensp;May my love surround you like sunshine and give you glorious freedom.
               </p>
               <figcaption class="px-5 blockquote-footer text-end">
-                <span class="h3">來自海外的約翰史密斯</span>
+                <span class="h3">約翰史密斯先生</span>
               </figcaption>
             </div>
           </div>
@@ -93,12 +79,11 @@
               />
             </div>
             <div class="col d-flex flex-column justify-content-evenly">
-              <p class="px-5 h2 lh-base mb-0 text-center">
-                山頂一個白狗兄 我是牧場的少爺<br />
-                透早到晚真打拼 牧場開闊歸山坪
+              <p class="px-5 h2 lh-base mb-0 text-start">
+                &ensp;&ensp;&ensp;&ensp;六腳的家具不僅外觀優美，而且非常舒服，尤其是這他們的沙發，我們家的狗狗小黑很喜歡，謝謝六腳家具！
               </p>
               <figcaption class="px-5 blockquote-footer text-end">
-                <span class="h3">來自山頂的白狗兄</span>
+                <span class="h3">中部的林家兄妹</span>
               </figcaption>
             </div>
           </div>

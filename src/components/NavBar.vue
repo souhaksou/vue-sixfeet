@@ -78,7 +78,7 @@ export default {
     },
   },
   mounted() {
-    this.navbarCollapse = new Collapse(this.$refs.navbar);
+    this.navbarCollapse = new Collapse(this.$refs.navbar, { toggle: false });
   },
 };
 </script>

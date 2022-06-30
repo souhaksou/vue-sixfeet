@@ -37,7 +37,7 @@
                     >
                   </p>
                   <p class="h5 text-dark">特價 NT${{ $filters.currency(item.price) }}</p>
-                  <a href="#" class="btn btn-dark d-block" @click.prevent="getProduct(item.id)">
+                  <a href="#" class="btn btn-dark d-block" @click.prevent="toProduct(item.id)">
                     <i class="bi bi-info-square-fill"></i>&ensp;&ensp;查看更多資訊
                   </a>
                 </div>
@@ -157,7 +157,7 @@ export default {
       }, 500);
     },
     // 跳轉產品頁面
-    getProduct(id) {
+    toProduct(id) {
       this.$router.push(`/product/${id}`);
     },
     // 加入購物車

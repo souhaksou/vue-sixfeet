@@ -6,16 +6,13 @@
       <img class="img-fluid w-100 h-100" src="../assets/images/love.jpg" alt="moon" />
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
-      <p class="d-none d-md-block py-5 lh-lg fs-1">
-        當我們愛這世界時<br />
-        我們才生活在這世界裡
-      </p>
+      <p class="d-none d-md-block py-5 lh-lg fs-1">以下是您關注的商品</p>
     </div>
   </section>
   <!-- 我的最愛 -->
   <div class="container">
     <div v-if="favorites.length === 0" class="m-5">
-      <h2 class="text-center display-5">我的最愛是空的QQ😢</h2>
+      <h2 class="text-center display-5">目前我的最愛沒有東西</h2>
     </div>
     <div v-else class="my-3 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
       <div class="col" v-for="item in favorites" :key="item.id">

@@ -1,11 +1,10 @@
 <template>
   <div class="bg-light mb-3">
-    <h2 class="py-5 text-center display-3">管理員介面</h2>
+    <h2 class="py-5 text-center display-3 fw-bold">管理員介面</h2>
   </div>
   <div class="container mt-5">
     <form class="row justify-content-center" @submit.prevent="signIn">
       <div class="col-md-6">
-        <h1 class="h3 mb-3 font-weight-normal">管理員登入</h1>
         <div class="mb-2">
           <label for="inputEmail" class="sr-only mb-3">Email address</label>
           <input

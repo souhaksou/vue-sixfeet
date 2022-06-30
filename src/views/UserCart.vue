@@ -3,10 +3,7 @@
   <!-- header -->
   <section class="row g-0">
     <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
-      <p class="d-none d-md-block py-5 lh-lg fs-1">
-        不是花中偏愛菊<br />
-        此花開盡更無花
-      </p>
+      <p class="d-none d-md-block py-5 lh-lg fs-1">趕快結帳吧！</p>
     </div>
     <div class="col-md-6">
       <img class="img-fluid w-100 h-100" src="../assets/images/cart.jpg" alt="moon" />
