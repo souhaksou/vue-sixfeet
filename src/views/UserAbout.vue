@@ -23,7 +23,8 @@
     </div>
   </section>
   <!-- 使用者心得 -->
-  <section class="bg-light py-5">
+  <section class="bg-light py-3 py-lg-5">
+    <h2 class="container mb-3 mb-lg-4 fw-bold">顧客心得</h2>
     <div
       id="carouselExampleCaptions"
       class="carousel carousel-dark slide"
@@ -109,6 +110,25 @@
       </button>
     </div>
   </section>
+  <!-- 家具小教室 -->
+  <section class="container py-3 py-lg-5">
+    <h2 class="fw-bold mb-3 mb-lg-4">家具小教室</h2>
+    <div class="row g-3 gx-lg-5">
+      <div class="col-lg-6">
+        <img class="img-fluid h-100" :src="knowledge.imgUrl" :alt="knowledge.title" />
+      </div>
+      <div class="col-lg-6 d-flex flex-column justify-content-between">
+        <p class="h4 lh-lg my-3">
+          {{ knowledge.text }}
+        </p>
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-dark btn-lg" @click="readKnowledge()">
+            看下一則小知識
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -118,7 +138,51 @@ export default {
   data() {
     return {
       aboutCarousel: {},
+      num: 0,
+      knowledge: {
+        title: '',
+        imgUrl: '',
+        text: '',
+      },
+      knowledges: [
+        {
+          title: '知識1',
+          imgUrl: 'https://upload.cc/i1/2022/07/11/JDhdQC.jpg',
+          text: '家具是日常生活和社會活動中為起居，或工作方便而配備的用具，傳統的家具都是獨立於房屋主體結構之外可以移動的，現代很多家具已成為建築的一個組成部分。',
+        },
+        {
+          title: '知識2',
+          imgUrl: 'https://upload.cc/i1/2022/07/11/JKsZ2X.jpg',
+          text: '家具按設計風格可分為：現代家具、中式古典家具、歐式古典家具、美式家具、在地家具（指當地生產的家具，並使用當地材料和技術）等。',
+        },
+        {
+          title: '知識3',
+          imgUrl: 'https://upload.cc/i1/2022/07/11/6yo1Qc.jpg',
+          text: '家具設計是藝術和技術的結合，反映了當代產品設計的發展，偏重於藝術。設計師會和製造商共同合作來完成設計，家具設計是經過兩者的共同努力完成良好的家具。',
+        },
+        {
+          title: '知識4',
+          imgUrl: 'https://upload.cc/i1/2022/07/11/DNwSgO.jpg',
+          text: '家具按所用材料可分為：實木家具、板木結合家具、板式家具、鋼木家具、複合板式家具、石材家具、軟體家具、藤編家具、竹編家具、和其他人造材材料家具（如玻璃、不鏽鋼、塑膠等）。',
+        },
+      ],
     };
+  },
+  methods: {
+    readKnowledge() {
+      this.num += 1;
+      if (this.num > 3) {
+        this.num = 0;
+      }
+      this.knowledge.title = this.knowledges[this.num].title;
+      this.knowledge.imgUrl = this.knowledges[this.num].imgUrl;
+      this.knowledge.text = this.knowledges[this.num].text;
+    },
+  },
+  created() {
+    this.knowledge.title = this.knowledges[this.num].title;
+    this.knowledge.imgUrl = this.knowledges[this.num].imgUrl;
+    this.knowledge.text = this.knowledges[this.num].text;
   },
   mounted() {
     this.aboutCarousel = new Carousel(this.$refs.carousel);

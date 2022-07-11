@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-lg-top">
     <div class="container fs-4">
       <div class="d-flex align-items-center justify-content-center">
-        <router-link to="/user" class="navbar-brand logo"><h1>6ft</h1></router-link>
+        <router-link to="/" class="navbar-brand logo"><h1>6ft</h1></router-link>
       </div>
       <div class="d-lg-none">
         <ul class="navbar-nav d-flex flex-row">
@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="navbarText" ref="navbar">
         <ul class="navbar-nav me-auto mb-3 mb-lg-0 text-center">
           <li class="nav-item mx-3 mt-2 mt-lg-0">
-            <router-link to="/user" class="nav-link">首頁</router-link>
+            <router-link to="/" class="nav-link">首頁</router-link>
           </li>
           <li class="nav-item mx-3">
             <router-link to="/about" class="nav-link">關於我們</router-link>
@@ -65,12 +65,6 @@
               ><i class="bi bi-cart-fill"></i
               ><span class="d-none d-xl-inline">&ensp;購物車</span></router-link
             >
-          </li>
-          <li class="nav-item mx-3">
-            <router-link to="/login" class="nav-link"
-              ><i class="bi bi-person-square"></i>
-              <span class="d-none d-xl-inline">&ensp;管理員</span>
-            </router-link>
           </li>
         </ul>
       </div>

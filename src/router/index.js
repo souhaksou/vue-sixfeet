@@ -4,10 +4,9 @@ const routes = [
   {
     path: '/',
     component: () => import('../views/HomeView.vue'),
-    redirect: '/user',
     children: [
       {
-        path: '/user',
+        path: '',
         component: () => import('../views/UserHome.vue'),
       },
       {
@@ -19,6 +18,7 @@ const routes = [
         component: () => import('../views/UserProducts.vue'),
       },
       {
+        name: 'productInfo',
         path: '/product/:productId',
         component: () => import('../views/UserProductInfo.vue'),
       },
@@ -71,7 +71,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  linkActiveClass: 'active',
+  linkActiveClass: '',
+  linkExactActiveClass: 'active',
   routes,
 });
 
