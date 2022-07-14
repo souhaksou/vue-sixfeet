@@ -49,14 +49,20 @@
         :key="item.date"
         class="list-group-item h5 py-3 d-flex flex-column flex-lg-row"
       >
-        <div class="mb-3 mb-lg-0 px-0 px-lg-5 text-dark">{{ item.date }}</div>
-        <div class="text-truncate">{{ item.text }}</div>
+        <div class="mb-3 mb-lg-0 px-0 px-lg-5">{{ item.date }}</div>
+        <div class="text-truncate">
+          <a href="#" class="link-dark" @click.prevent="openModal(item)">{{ item.text }}</a>
+        </div>
       </li>
     </ul>
   </section>
+  <!-- news modal -->
+  <homenews ref="formModal" :news="news"></homenews>
 </template>
 
 <script>
+import homenews from '../components/HomeNews.vue';
+
 export default {
   data() {
     return {
@@ -64,24 +70,30 @@ export default {
         {
           date: '2022/05/27',
           text: '結帳時出示優惠碼可享折扣',
+          news: 'sixfeet 六腳家具為了鼓勵大家來消費，促進經濟的同時又可以改善家中的生活，特地設計抽優惠碼活動，讓顧客結帳時出示優惠碼即享折扣。',
         },
         {
           date: '2022/04/08',
           text: 'sixfeet 商品享88折起跳的優惠！',
+          news: '望著購物車裡面的商品流口水，卻無法下定決心下單嗎？不用煩惱，在 sixfeet 六腳家具的電商購物，所有的商品至少88折起跳，祝大家發大財！',
         },
         {
           date: '2022/03/15',
           text: 'sixfeet 所有商品都免運，祝大家發發發',
+          news: '精打細算的你還在糾結網購的運費嗎？別擔心，在 sixfeet 六腳家具的電商購物，所有的商品全部免運費，祝大家一路發發發，發大財！',
         },
         {
           date: '2022/02/10',
           text: '電商即將上線！',
+          news: '為了造福忠實的顧客們，sixfeet 六腳家具的電商即將上線，之後 sixfeet 的粉絲們便可以透過我們的購物網站來挑選家具，謝謝大家的支持！',
         },
         {
           date: '2022/01/01',
           text: 'sixfeet 開始籌備！',
+          news: 'sixfeet 六腳家具在今年，也就是 2022 年正式成立，目前正在籌備當中，業務範圍預計會包含家具設計、產品設計、室內設計，敬請期待！',
         },
       ],
+      news: '',
       card: [
         {
           icon: 'bi-check-circle-fill',
@@ -100,6 +112,16 @@ export default {
         },
       ],
     };
+  },
+  components: {
+    homenews,
+  },
+  methods: {
+    openModal(value) {
+      this.$refs.formModal.showModal();
+      console.log('readNews', value);
+      this.news = value;
+    },
   },
 };
 </script>

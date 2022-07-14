@@ -11,7 +11,13 @@
   </section>
   <!-- cart -->
   <section class="container my-5">
-    <div class="">
+    <div class="text-center" v-if="cart.total === 0">
+      <h3 class="mb-3">購物車目前沒有商品</h3>
+      <div>
+        <a href="#" class="btn btn-success btn-lg" @click.prevent="goToProducts">點我購物去</a>
+      </div>
+    </div>
+    <div v-else>
       <table class="table table-hover align-middle">
         <thead>
           <tr>
@@ -75,12 +81,12 @@
       </table>
       <!-- 按鈕 -->
       <div class="row g-3" v-if="cart.final_total !== 0">
-        <div class="col-6 col-sm-3 d-grid">
+        <div class="col-6 col-md-3 d-grid">
           <button type="button" class="btn btn-outline-danger align-self-center" @click="removeAll">
             <i class="bi bi-x-circle-fill"></i>&ensp;清空購物車
           </button>
         </div>
-        <div class="col-6 col-sm-3 d-grid">
+        <div class="col-6 col-md-3 d-grid">
           <button type="button" class="btn btn-dark" @click="openModal()">去結帳</button>
         </div>
         <div class="col input-group input-group-sm">
@@ -192,6 +198,9 @@ export default {
           this.$router.push(`/checkout/${res.data.orderId}`);
         }
       });
+    },
+    goToProducts() {
+      this.$router.push('/products');
     },
   },
   created() {

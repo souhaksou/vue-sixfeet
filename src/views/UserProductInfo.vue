@@ -90,8 +90,13 @@
         <div class="col-lg-4" v-for="item in interests" :key="item.id">
           <div class="card border-secondary h-100">
             <img class="card-img-top img-fluid other-img" :src="item.imageUrl" :alt="item.title" />
+            <h3 class="card-title mt-3 mb-0 text-center">{{ item.title }}</h3>
             <div class="card-body d-flex justify-content-end flex-column">
-              <a href="#" class="btn btn-secondary d-block" @click.prevent="toProduct(item.id)">
+              <a
+                href="#"
+                class="btn btn-secondary d-block stretched-link"
+                @click.prevent="toProduct(item.id)"
+              >
                 <i class="bi bi-info-square-fill"></i>&ensp;&ensp;查看更多資訊
               </a>
             </div>
