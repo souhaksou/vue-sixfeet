@@ -11,8 +11,11 @@
   </section>
   <!-- 我的最愛 -->
   <div class="container">
-    <div v-if="favorites.length === 0" class="m-5">
-      <h2 class="text-center display-5">目前我的最愛沒有東西</h2>
+    <div v-if="favorites.length === 0" class="m-5 text-center">
+      <h2 class="mb-4">目前我的最愛沒有東西</h2>
+      <div>
+        <a href="#" class="btn btn-success btn-lg" @click.prevent="goToProducts">點我購物去</a>
+      </div>
     </div>
     <div v-else class="my-3 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
       <div class="col" v-for="item in favorites" :key="item.id">
@@ -96,6 +99,9 @@ export default {
       const res = { data: { success: true } };
       this.$httpMessageState(res, '從我的最愛移除');
       this.getFavorites();
+    },
+    goToProducts() {
+      this.$router.push('/products');
     },
   },
   created() {
